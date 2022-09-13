@@ -5,13 +5,16 @@ export interface AuthState {
   isLoggedIn: boolean;
   userName?: string;
   favoriteIcon?: string;
+  textInput?: string;
 }
 
 //EStado inicial
 export const authInitialState: AuthState = {
   isLoggedIn: false,
   userName: undefined,
-  favoriteIcon: undefined
+  favoriteIcon: undefined,
+  textInput: 'nothing to show'
+
 };
 
 //lo usaremos para decirle a react como luce y que expone el context
