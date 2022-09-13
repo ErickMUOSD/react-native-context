@@ -14,6 +14,7 @@ import {
 } from "react-native";
 
 import { DrawerNavigation } from "./src/navigator/DrawerNavigation";
+import { AuthProvider } from "./src/context/AuthContext";
 import { NavigationContainer } from "@react-navigation/native";
 
 
@@ -22,9 +23,18 @@ const App: () => Node = () => {
 
   return (
     <NavigationContainer>
-      <DrawerNavigation />
+      <AppState>
+        <DrawerNavigation />
+      </AppState>
     </NavigationContainer>
 
+  );
+};
+const AppState = ({ children }: any) => {
+  return (
+    <AuthProvider>
+      {children}
+    </AuthProvider>
   );
 };
 
