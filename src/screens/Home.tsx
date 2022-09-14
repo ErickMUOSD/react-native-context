@@ -1,10 +1,23 @@
-import { Text, View } from "react-native";
-import React, { useState } from "react";
+import {Text, View, Button} from "react-native";
+import React, {useEffect, useContext} from "react";
+import {AuthContext} from "../context/AuthContext";
 
 export const Home = () => {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  );
+    const {signIn,authState}= useContext( AuthContext );
+
+    // useEffect(() => {
+    //
+    // }, []);
+    console.log(authState.isLoggedIn);
+    return (
+        <View>
+            <Text>Home</Text>
+            {authState.isLoggedIn
+                ? <Text>Home</Text>
+                :   <Button title='Change state' onPress={signIn}></Button>
+
+            }
+
+        </View>
+    );
 };

@@ -9,6 +9,8 @@ export const Settings = () => {
     <View>
       <Text>Settings</Text>
       <Text>{authState.textInput}</Text>
+      <Text>{authState.userName}</Text>
+      <Text>{authState.isLoggedIn}</Text>
     </View>
   );
 };
