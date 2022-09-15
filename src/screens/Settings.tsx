@@ -14,17 +14,21 @@ export const Settings = () => {
             <Text>{authState.userName}</Text>
             <Text>{authState.isLoggedIn}</Text>
             <Text>{authState.favoriteIcons}</Text>
-            <View  style={{  flexDirection:'row', flexWrap: 'wrap' }}>
-                <TouchableIcon iconName='rocket'/>
-                <TouchableIcon iconName='body'/>
-                <TouchableIcon iconName='flag'/>
-                <TouchableIcon iconName='book'/>
-                <TouchableIcon iconName='beer'/>
-                <TouchableIcon iconName='boat'/>
-                <TouchableIcon iconName='add'/>
-                <TouchableIcon iconName='bulb'/>
-                <TouchableIcon iconName='bug'/>
-            </View>
+            {
+                authState.isLoggedIn
+                && <View  style={{  flexDirection:'row', flexWrap: 'wrap' }}>
+                    <TouchableIcon iconName='rocket'/>
+                    <TouchableIcon iconName='body'/>
+                    <TouchableIcon iconName='flag'/>
+                    <TouchableIcon iconName='book'/>
+                    <TouchableIcon iconName='beer'/>
+                    <TouchableIcon iconName='boat'/>
+                    <TouchableIcon iconName='add'/>
+                    <TouchableIcon iconName='bulb'/>
+                    <TouchableIcon iconName='bug'/>
+                </View>
+            }
+
 
         </View>
     );

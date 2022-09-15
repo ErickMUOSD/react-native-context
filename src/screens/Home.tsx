@@ -3,7 +3,7 @@ import React, {useEffect, useContext} from "react";
 import {AuthContext} from "../context/AuthContext";
 import Icon from 'react-native-vector-icons/Ionicons';
 export const Home = () => {
-    const {signIn,authState}= useContext( AuthContext );
+    const {signIn,authState, logout}= useContext( AuthContext );
 
     // useEffect(() => {
     //
@@ -13,11 +13,10 @@ export const Home = () => {
         <View>
             <Text>Home</Text>
             {authState.isLoggedIn
-                ? <Text>Home</Text>
-                :   <Button title='Change state' onPress={signIn}></Button>
+                ? <Button title='Log out' onPress={logout}></Button>
+                :   <Button title='Log in' onPress={signIn}></Button>
 
             }
-
             {
                 authState.favoriteIcons &&
                 <Icon name={authState.favoriteIcons} size={120} color="#1fc7d1" />

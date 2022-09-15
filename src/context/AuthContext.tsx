@@ -25,6 +25,7 @@ export interface AuthContextProps {
     authState: AuthState;
     signIn: () => void;
     addIcon: (iconName: string) => void;
+    logout: () => void;
 }
 
 //componnete provedor del estado
@@ -39,11 +40,16 @@ export const AuthProvider = ({children}: any) => {
     const addIcon = (iconName: string) => {
         dispatch({type: 'addIcon',payload: iconName})
     }
+    const logout = () => {
+        dispatch({type: 'logout'})
+    }
+
     return (
         <AuthContext.Provider value={{
             authState,
             signIn,
-            addIcon
+            addIcon,
+            logout
         }}>
             {children}
         </AuthContext.Provider>
